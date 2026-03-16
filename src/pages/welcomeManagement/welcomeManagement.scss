@@ -1,0 +1,66 @@
+.welcome-management-page {
+  padding: 24px;
+  min-height: calc(100vh - 64px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .welcome-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    border-radius: 16px;
+    max-width: 600px;
+    width: 100%;
+
+    .welcome-avatar {
+      
+      .anticon {
+        color: #8c8c8c;
+      }
+    }
+
+    .welcome-text {
+      .welcome-title {
+        margin: 0 0 16px 0;
+        font-weight: 700;
+        font-size: 2rem;
+        color: #262626;
+      }
+
+      .welcome-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #595959;
+      }
+    }
+  }
+}
+
+// Animation for cards
+.action-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Staggered animation for multiple cards
+.quick-actions-section {
+  .ant-col:nth-child(1) .action-card { animation-delay: 0.1s; }
+  .ant-col:nth-child(2) .action-card { animation-delay: 0.2s; }
+  .ant-col:nth-child(3) .action-card { animation-delay: 0.3s; }
+  .ant-col:nth-child(4) .action-card { animation-delay: 0.4s; }
+  .ant-col:nth-child(5) .action-card { animation-delay: 0.5s; }
+  .ant-col:nth-child(6) .action-card { animation-delay: 0.6s; }
+}

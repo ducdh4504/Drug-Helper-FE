@@ -1,0 +1,238 @@
+.schedule-container {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.schedule-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #20558A;
+  display: flex;
+  align-items: center;
+}
+
+.schedule-add-button {
+  height: 40px;
+  padding: 0 24px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.calendar-card {
+  margin-bottom: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+  .ant-card-head {
+    border-bottom: 1px solid #e8e8e8;
+    
+    .ant-card-head-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #20558A;
+    }
+  }
+  
+  .ant-card-body {
+    padding: 24px;
+  }
+}
+
+// Tùy chỉnh react-big-calendar
+.rbc-calendar {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e8e8e8;
+  
+  .rbc-header {
+    background-color: #20558A;
+    color: white;
+    font-weight: 600;
+    padding: 12px 8px;
+    border: none;
+    
+    &:first-child {
+      border-top-left-radius: 8px;
+    }
+    
+    &:last-child {
+      border-top-right-radius: 8px;
+    }
+  }
+  
+  .rbc-month-view, .rbc-time-view {
+    border: none;
+  }
+  
+  .rbc-day-bg {
+    border-right: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    
+    &.rbc-today {
+      background-color: rgba(32, 85, 138, 0.05);
+    }
+  }
+  
+  .rbc-time-slot {
+    border-top: 1px solid #f0f0f0;
+  }
+  
+  .rbc-timeslot-group {
+    border-bottom: 1px solid #e8e8e8;
+  }
+  
+  .rbc-current-time-indicator {
+    background-color: #ff4d4f;
+    height: 2px;
+  }
+  
+  .rbc-event {
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: 500;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
+    
+    // Personal schedule - green
+    &[style*="rgb(135, 208, 104)"] {
+      background-color: #87d068 !important;
+    }
+    
+    // Appointment schedule - blue
+    &[style*="rgb(24, 144, 255)"] {
+      background-color: #1890ff !important;
+    }
+    
+    // Pending appointment - orange
+    &[style*="rgb(250, 173, 20)"] {
+      background-color: #faad14 !important;
+    }
+    
+    // Accepted appointment - green
+    &[style*="rgb(82, 196, 26)"] {
+      background-color: #52c41a !important;
+    }
+    
+    // Rejected appointment - red
+    &[style*="rgb(255, 77, 79)"] {
+      background-color: #ff4d4f !important;
+    }
+  }
+  
+  .rbc-toolbar {
+    margin-bottom: 20px;
+    padding: 0 8px;
+    
+    .rbc-btn-group {
+      button {
+        background-color: white;
+        border: 1px solid #d9d9d9;
+        color: #333;
+        padding: 6px 12px;
+        border-radius: 4px;
+        margin-right: 4px;
+        transition: all 0.2s;
+        
+        &:hover {
+          border-color: #20558A;
+          color: #20558A;
+        }
+        
+        &.rbc-active {
+          background-color: #20558A;
+          border-color: #20558A;
+          color: white;
+        }
+      }
+    }
+    
+    .rbc-toolbar-label {
+      font-size: 18px;
+      font-weight: 600;
+      color: #20558A;
+    }
+  }
+}
+
+// Tùy chỉnh bảng appointments
+.ant-table-thead > tr > th {
+  background-color: #20558A;
+  color: white;
+  font-weight: 600;
+  border: none;
+  
+  &::before {
+    display: none;
+  }
+}
+
+.ant-table-tbody > tr {
+  &:hover > td {
+    background-color: rgba(32, 85, 138, 0.05);
+  }
+}
+
+.ant-tag {
+  border-radius: 4px;
+  font-weight: 500;
+  padding: 2px 8px;
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .schedule-container {
+    padding: 1rem;
+  }
+  
+  .schedule-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+    
+    .schedule-title {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+  
+  .calendar-card .ant-card-body {
+    padding: 16px;
+  }
+  
+  .rbc-calendar {
+    .rbc-toolbar {
+      flex-direction: column;
+      gap: 12px;
+      
+      .rbc-toolbar-label {
+        text-align: center;
+        font-size: 16px;
+      }
+    }
+  }
+}

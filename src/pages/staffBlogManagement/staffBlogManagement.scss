@@ -1,0 +1,149 @@
+.staff-blog-management {
+  padding: 24px;
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    .ant-typography {
+      margin: 0;
+    }
+  }
+
+  .ant-card {
+    .ant-card-body {
+      padding: 24px;
+    }
+  }
+
+  .ant-table {
+    .ant-table-thead > tr > th {
+      background: #fafafa;
+      font-weight: 600;
+    }
+
+    .ant-table-tbody > tr > td {
+      vertical-align: middle;
+    }
+
+    .ant-btn {
+      &:hover {
+        transform: translateY(-1px);
+        transition: all 0.2s ease;
+      }
+    }
+  }
+
+  .blog-preview {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .blog-preview-header {
+      padding: 24px 24px 16px;
+      border-bottom: 1px solid #f0f0f0;
+
+      .ant-typography {
+        margin-bottom: 12px;
+        font-weight: 600;
+      }
+
+      .blog-meta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+
+        .publish-date {
+          color: #666;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .blog-image-container {
+      width: 100%;
+      margin: 0;
+      line-height: 0;
+
+      .ant-image {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .blog-content {
+      padding: 24px;
+      white-space: pre-wrap;
+      line-height: 1.6;
+      color: #333;
+      font-size: 15px;
+    }
+  }
+
+  // Modal customization
+  .ant-modal {
+    .ant-modal-header {
+      border-bottom: 1px solid #f0f0f0;
+      padding: 16px 24px;
+    }
+
+    .ant-modal-body {
+      padding: 24px;
+    }
+  }
+
+  // Form styling
+  .ant-form {
+    .ant-form-item {
+      margin-bottom: 16px;
+    }
+
+    .ant-input,
+    .ant-select,
+    .ant-picker {
+      border-radius: 6px;
+    }
+
+    .ant-input:focus,
+    .ant-select:focus,
+    .ant-picker:focus {
+      border-color: #1890ff;
+      box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+    }
+  }
+
+  // Tag customization
+  .ant-tag {
+    border-radius: 12px;
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  // Button customization
+  .ant-btn-primary {
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(24, 144, 255, 0.2);
+
+    &:hover {
+      box-shadow: 0 4px 8px rgba(24, 144, 255, 0.3);
+    }
+  }
+
+  // Pagination styling
+  .ant-pagination {
+    margin-top: 16px;
+    text-align: right;
+
+    .ant-pagination-item {
+      border-radius: 6px;
+    }
+
+    .ant-pagination-item-active {
+      border-color: #1890ff;
+    }
+  }
+}

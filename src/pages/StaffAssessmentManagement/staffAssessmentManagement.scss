@@ -1,0 +1,227 @@
+.staff-assessment-management-container {
+  min-height: calc(100vh - 64px);
+  background-color: #f5f5f5;
+
+  .main-container-card {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    background: #ffffff;
+    overflow: hidden;
+
+    .ant-card-body {
+      padding: 0;
+    }
+  }
+
+  // Tabs styling
+  .management-tabs {
+    .ant-tabs-nav {
+      background: #fafafa;
+      margin: 0;
+      padding: 0 24px;
+      border-bottom: 1px solid #f0f0f0;
+
+      .ant-tabs-nav-wrap {
+        .ant-tabs-nav-list {
+          .ant-tabs-tab {
+            background: transparent;
+            border: none;
+            margin: 0 8px 0 0;
+            padding: 16px 24px;
+            border-radius: 0;
+            font-weight: 600;
+            color: #8c8c8c;
+            transition: all 0.3s ease;
+            position: relative;
+
+            &:hover {
+              color: #1890ff;
+              background: rgba(24, 144, 255, 0.06);
+            }
+
+            &.ant-tabs-tab-active {
+              color: #1890ff;
+              background: #ffffff;
+              border-bottom: 3px solid #1890ff;
+
+              &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: #1890ff;
+              }
+            }
+
+            .tab-title {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              font-size: 14px;
+
+              .anticon {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+
+      .ant-tabs-ink-bar {
+        display: none;
+      }
+    }
+
+    .ant-tabs-content-holder {
+      .ant-tabs-content {
+        .ant-tabs-tabpane {
+          padding: 0;
+
+          .tab-content {
+            // Reset padding since components have their own padding
+            .assessment-manage-board-container,
+            .question-manage-board-container {
+              padding: 24px;
+              background: transparent;
+
+              .ant-card,
+              .main-card {
+                box-shadow: none;
+                border: none;
+                background: transparent;
+
+                .ant-card-body {
+                  padding: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Responsive design
+  @media (max-width: 768px) {
+    padding: 16px;
+
+    .main-container-card {
+      border-radius: 6px;
+    }
+
+    .management-tabs {
+      .ant-tabs-nav {
+        padding: 0 16px;
+
+        .ant-tabs-nav-wrap {
+          .ant-tabs-nav-list {
+            .ant-tabs-tab {
+              padding: 12px 16px;
+              margin: 0 4px 0 0;
+
+              .tab-title {
+                font-size: 13px;
+
+                .anticon {
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .ant-tabs-content-holder {
+        .tab-content {
+          .assessment-manage-board-container,
+          .question-manage-board-container {
+            padding: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding: 12px;
+
+    .management-tabs {
+      .ant-tabs-nav {
+        padding: 0 12px;
+
+        .ant-tabs-nav-wrap {
+          .ant-tabs-nav-list {
+            .ant-tabs-tab {
+              padding: 10px 12px;
+
+              .tab-title {
+                font-size: 12px;
+                gap: 6px;
+
+                .anticon {
+                  font-size: 13px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .ant-tabs-content-holder {
+        .tab-content {
+          .assessment-manage-board-container,
+          .question-manage-board-container {
+            padding: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  // Animation for tab content
+  .ant-tabs-tabpane {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+
+    &.ant-tabs-tabpane-active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  // Loading state
+  .ant-spin-container {
+    .ant-spin {
+      .ant-spin-dot {
+        i {
+          background-color: #1890ff;
+        }
+      }
+    }
+  }
+
+  // Custom scrollbar for the entire page
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+
+    &:hover {
+      background: #a8a8a8;
+    }
+  }
+}
+
