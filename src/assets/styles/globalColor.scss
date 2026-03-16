@@ -1,0 +1,22 @@
+// Màu chính
+$primary-color: #20558A;
+$secondary-color: #3D72A7;
+
+// Màu phối
+$color-start: #3E72A7;
+$color-end: #182D41;
+
+$color-mix: linear-gradient(
+  to right,
+  $color-start 19%,
+  $color-end 85%
+);
+
+// Màu nút từ chối
+$color-reject: #EC1414;
+
+// Màu phần chứa thanh tìm kiếm lớn
+$color-search: #778B9F;
+
+// Màu trên lịch của tư vấn viên
+$color-today: #FFF7A0
