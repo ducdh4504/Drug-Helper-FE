@@ -1,0 +1,131 @@
+// src/components/Header/AdminNavbar/AdminNavbar.scss
+@import '../../../assets/styles/globalColor.scss';
+
+.admin-header {
+  background: $color-mix;
+  color: #fff;
+  padding: 0 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.admin-header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  width: 100%;
+}
+
+.admin-header__left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sidebar-toggle-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  min-width: 44px;
+  min-height: 44px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+  }
+
+  &.open {
+    transform: rotate(90deg);
+    
+    .hamburger-icon {
+      color: #fbbf24;
+    }
+  }
+}
+
+.hamburger-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  width: 24px;
+  height: 24px;
+  
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.admin-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.admin-header__right {
+  display: flex;
+  align-items: center;
+}
+
+.admin-login-btn {
+  background: #fff;
+  color: #183153;
+  border: none;
+  padding: 0.4rem 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $primary-color;
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .sidebar-toggle-btn {
+    padding: 10px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  .hamburger-icon {
+    font-size: 1.3rem;
+    
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .admin-logo {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+}

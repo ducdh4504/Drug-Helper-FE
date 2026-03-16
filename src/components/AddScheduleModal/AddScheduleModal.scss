@@ -1,0 +1,40 @@
+.add-schedule-modal {
+  .ant-modal-header {
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom: 0;
+    
+    .ant-modal-title {
+      color: #20558A;
+      font-weight: 600;
+    }
+  }
+  
+  .ant-form-item-label > label {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .ant-picker, .ant-input {
+    border-radius: 6px;
+    border: 1px solid #d9d9d9;
+    
+    &:hover {
+      border-color: #20558A;
+    }
+    
+    &:focus, &.ant-picker-focused {
+      border-color: #20558A;
+      box-shadow: 0 0 0 2px rgba(32, 85, 138, 0.1);
+    }
+  }
+  
+  .ant-btn-primary {
+    background-color: #20558A;
+    border-color: #20558A;
+    
+    &:hover {
+      background-color: #1a3d6b;
+      border-color: #1a3d6b;
+    }
+  }
+}

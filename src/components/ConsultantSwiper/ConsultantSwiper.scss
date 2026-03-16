@@ -1,0 +1,173 @@
+.consultant__swiper-container {
+    position: relative;
+    padding: 0 80px;
+    margin-bottom: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    background: none;
+    border: none;
+    box-shadow: none;
+    
+    .consultant__swiper {
+        padding: 20px 0 60px 0;
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: #183153;
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        border: 2px solid #20558A;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 20;
+        cursor: pointer;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 
+            0 6px 20px rgba(32, 85, 138, 0.25),
+            0 3px 10px rgba(0, 0, 0, 0.1);
+        
+        span {
+            font-size: 2rem;
+            font-weight: bold;
+            line-height: 1;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        &:hover {
+            background: linear-gradient(135deg, #20558A 0%, #183153 100%);
+            color: #fff;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 
+                0 8px 28px rgba(32, 85, 138, 0.4),
+                0 4px 14px rgba(0, 0, 0, 0.15);
+        }
+
+        &:active {
+            transform: translateY(-50%) scale(1.05);
+        }
+    }
+
+    .swiper-button-prev {
+        left: 10px;
+    }
+
+    .swiper-button-next {
+        right: 10px;
+    }
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.consultant__swiper {
+    padding-bottom: 60px;
+    min-height: 480px;
+    position: relative;
+
+    .swiper-slide {
+        transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        height: auto;
+        display: flex;
+        
+        .container-consultant-box {
+            height: 480px;
+            min-height: 480px;
+            max-height: 480px;
+        }
+        
+        &.swiper-slide-active {
+            opacity: 1;
+            transform: scale(1) translateZ(0);
+        }
+        
+        &.swiper-slide-next,
+        &.swiper-slide-prev {
+            opacity: 0.95;
+            transform: scale(0.98) translateZ(0);
+        }
+        
+        &:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev) {
+            opacity: 0.75;
+            transform: scale(0.96) translateZ(0);
+        }
+    }
+
+    .swiper-pagination {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 20px;
+        text-align: center;
+        z-index: 11;
+        padding: 0;
+    }
+
+    .swiper-pagination-bullet {
+        background: #183153;
+        opacity: 0.4;
+        width: 12px;
+        height: 12px;
+        margin: 0 6px;
+        border-radius: 50%;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        position: relative;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border: 2px solid transparent;
+            border-radius: 50%;
+            transition: border-color 0.3s ease;
+        }
+
+        &:hover {
+            opacity: 0.7;
+            transform: scale(1.2);
+        }
+
+        &.swiper-pagination-bullet-active {
+            opacity: 1;
+            background: linear-gradient(135deg, #20558A 0%, #183153 100%);
+            transform: scale(1.3);
+            box-shadow: 
+                0 4px 12px rgba(32, 85, 138, 0.4),
+                0 2px 6px rgba(0, 0, 0, 0.1);
+                
+            &::before {
+                border-color: rgba(32, 85, 138, 0.3);
+            }
+        }
+    }
+}
+
+@keyframes gradientRotate {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}

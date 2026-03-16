@@ -1,0 +1,105 @@
+.success-booking-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+  animation: fadeIn 0.3s ease;
+}
+
+.success-booking-modal-overlay.closing {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+.success-booking-modal-box {
+  background: #fff;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  border-radius: 8px;
+  min-width: 340px;
+  max-width: 95vw;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  animation: slideIn 0.3s ease;
+  position: relative;
+}
+
+.success-booking-modal-box.closing {
+  animation: slideOut 0.3s ease forwards;
+}
+
+.success-icon {
+  font-size: 2.5rem;
+  color: #f8f8f8;
+  margin-bottom: 1rem;
+  background-color: #20558A;
+}
+
+.success-booking-modal-box h2 {
+  color: #20558A;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.success-details {
+  margin: 1.2rem 0 1.5rem 0;
+  color: #444;
+  text-align: left;
+}
+
+.success-details p {
+  margin: 0.3rem 0;
+}
+
+.confirm-btn {
+  background-color: #20558A;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 1rem;
+}
+.confirm-btn:hover {
+  background-color: #1a4470;
+}
+
+.countdown-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: #20558A;
+  animation: countdown 3s linear forwards;
+}
+
+@keyframes countdown {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes slideOut {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(20px); opacity: 0; }
+} 

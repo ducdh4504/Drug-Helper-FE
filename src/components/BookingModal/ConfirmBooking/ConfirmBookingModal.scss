@@ -1,0 +1,115 @@
+.confirm-booking-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+  animation: fadeIn 0.3s ease;
+}
+
+.confirm-booking-modal-box {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 8px;
+  min-width: 340px;
+  max-width: 95vw;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  font-family: 'Open Sans', sans-serif;
+  animation: slideIn 0.3s ease;
+}
+
+.confirm-booking-modal-box h2 {
+  color: #20558A;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.confirmation-details p {
+  margin: 0.5rem 0;
+  color: #444;
+}
+
+.confirmation-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.confirm-booking-modal-box .confirm2-btn, .confirm-booking-modal-box .cancel-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 170px;
+  border: 1.5px solid transparent;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.confirm-booking-modal-box .confirm2-btn {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: #fff;
+  border-color: #20c997;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: 0.5s;
+  }
+
+  &:hover {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+
+    box-shadow: 0 6px 12px rgba(32, 85, 138, 0.3);
+
+    &::before {
+      left: 100%;
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(32, 85, 138, 0.2);
+  }
+}
+
+.confirm-booking-modal-box .cancel-btn {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  color: #495057;
+  border-color: #dee2e6;
+}
+
+.confirm-booking-modal-box .cancel-btn:hover {
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+  color: #212529;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+} 

@@ -1,0 +1,312 @@
+.booking-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.booking-modal-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  animation: slideIn 0.3s ease;
+  font-family: 'Open Sans', sans-serif;
+
+  h2 {
+    color: #20558A;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  p {
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.booking-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  padding: 0.5rem;
+  line-height: 1;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #20558A;
+  }
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .calendar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .selected-slot-info {
+    background: #f8f9fa;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 4px solid #20558A;
+    font-size: 0.95rem;
+    color: #495057;
+    
+    strong {
+      color: #20558A;
+    }
+  }
+
+  .description-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: #333;
+    font-weight: 500;
+
+    input,
+    select,
+    textarea {
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: 'Open Sans', sans-serif;
+      transition: border-color 0.3s ease;
+      background: #f8f9fa;
+      height: 48px;
+      box-sizing: border-box;
+    }
+
+    input[type="date"] {
+      background: #f8f9fa;
+      height: 48px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: 'Open Sans', sans-serif;
+      padding: 0.75rem;
+      box-sizing: border-box;
+    }
+
+    select {
+      background: #f8f9fa;
+      height: 48px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: 'Open Sans', sans-serif;
+      padding: 0.75rem;
+      box-sizing: border-box;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+  }
+
+  .confirm-btn {
+    background: linear-gradient(135deg, #20558A 0%, #2A6BA3 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    align-self: flex-end;
+    box-shadow: 0 4px 6px rgba(32, 85, 138, 0.2);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+      );
+      transition: 0.5s;
+    }
+
+    &:hover {
+      background: linear-gradient(135deg, #1A4B7A 0%, #235086 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(32, 85, 138, 0.3);
+
+      &::before {
+        left: 100%;
+      }
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(32, 85, 138, 0.2);
+    }
+  }
+}
+
+// Mobiscroll calendar styles
+.mbsc-calendar-wrapper {
+  .mbsc-calendar-header {
+    background: #20558A !important;
+    color: white !important;
+  }
+  
+  .mbsc-calendar-day-selected {
+    background: #20558A !important;
+    color: white !important;
+  }
+  
+  .mbsc-timegrid-slot-selected {
+    background: #20558A !important;
+    color: white !important;
+  }
+  
+  .mbsc-label {
+    background: rgba(225, 82, 143, 0.1) !important;
+    color: #e1528f !important;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 0.8rem;
+  }
+  
+  .mbsc-invalid {
+    background: rgba(220, 53, 69, 0.1) !important;
+    color: #dc3545 !important;
+    text-decoration: line-through;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Confirm Modal Styles */
+.confirm-modal {
+  min-height: auto;
+  padding: 40px;
+}
+
+.confirmation-details {
+  background: #f8f9fa;
+  padding: 24px;
+  border-radius: 8px;
+  margin: 24px 0;
+  text-align: left;
+}
+
+.confirmation-details p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+
+.confirmation-details strong {
+  color: #235086;
+  margin-right: 8px;
+}
+
+.confirmation-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+/* Success Modal Styles */
+.success-modal {
+  min-height: auto;
+  padding: 40px;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: #4CAF50;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  margin: 0 auto 24px;
+  animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.success-details {
+  background: #f8f9fa;
+  padding: 24px;
+  border-radius: 8px;
+  margin: 24px 0;
+  text-align: left;
+}
+
+.success-details p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+
+.success-details strong {
+  color: #235086;
+  margin-right: 8px;
+} 

@@ -1,0 +1,56 @@
+.survey-modal {
+  .ant-modal-content {
+    border-radius: 8px;
+  }
+
+  .ant-modal-header {
+    border-radius: 8px 8px 0 0;
+  }
+
+  .ant-modal-title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    
+    p {
+      margin-top: 1rem;
+      color: #666;
+    }
+  }
+
+  .survey-content {
+    padding: 0.5rem 0;
+
+
+    .survey-question {
+      margin-bottom: 1.5rem;
+      
+      p {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+    }
+
+    .survey-response {
+      margin-bottom: 1.5rem;
+
+      .ant-input {
+        border-radius: 4px;
+      }
+    }
+
+    .survey-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-top: 1rem;
+    }
+  }
+}

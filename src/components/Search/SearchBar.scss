@@ -1,0 +1,139 @@
+.search-bar-section {
+    background-color: #8FA1B3;
+    padding: 60px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.search-bar-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #2C3E50;
+    text-align: center;
+}
+
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.search-bar-form {
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    width: 100%;
+    background-color: white;
+    border: 2px solid #34495E;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar-input {
+    flex: 1;
+    padding: 18px 25px;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    background-color: white;
+    color: #2C3E50;
+    
+    &::placeholder {
+        color: #95A5A6;
+        font-style: italic;
+    }
+}
+
+.search-bar-button {
+    background-color: white;
+    border: none;
+    padding: 18px 25px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #2C3E50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    border-left: 1px solid #E8F4FD;
+    
+    &:hover {
+        background-color: #F8F9FA;
+        color: #3498DB;
+        transform: scale(1.05);
+    }
+    
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+// Responsive design
+@media (max-width: 1024px) {
+    .search-bar-form {
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-bar-section {
+        padding: 40px 20px;
+    }
+    
+    .search-bar-title {
+        font-size: 1.7rem;
+        margin-bottom: 30px;
+    }
+    
+    .search-bar-form {
+        max-width: 100%;
+    }
+    
+    .search-bar-input {
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+    
+    .search-bar-button {
+        padding: 15px 20px;
+        font-size: 1.3rem;
+        
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .search-bar-section {
+        padding: 30px 15px;
+    }
+    
+    .search-bar-title {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+    
+    .search-bar-input {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .search-bar-button {
+        padding: 12px 15px;
+        font-size: 1.2rem;
+    }
+}

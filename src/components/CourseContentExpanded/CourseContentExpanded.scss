@@ -1,0 +1,34 @@
+.course-content-expanded-loading {
+  padding: 20px;
+  text-align: center;
+}
+
+.course-content-expanded-empty {
+  padding: 20px;
+
+  .ant-empty {
+    padding: 20px 0;
+  }
+}
+
+.course-content-expanded-container {
+  padding: 0 20px 20px;
+}
+
+.course-content-expanded-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.course-content-expanded-list {
+  .ant-list-item {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 8px 0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

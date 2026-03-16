@@ -1,0 +1,415 @@
+.assessment-manage-board-container {
+  padding: 24px;
+  min-height: calc(100vh - 64px);
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  overflow-x: hidden;
+
+  .ant-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: none;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+
+    .ant-card-body {
+      padding: 24px;
+    }
+  }
+
+  // Header styling
+  .ant-typography h2 {
+    color: #1890ff;
+    font-weight: 700;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin: 0;
+  }
+
+  // Add button styling
+  .ant-btn-primary {
+    background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+    border: none;
+    border-radius: 8px;
+    height: 40px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(24, 144, 255, 0.3);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(135deg, #40a9ff 0%, #1890ff 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(24, 144, 255, 0.4);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  // Table styling
+  .ant-table {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: auto;
+
+    .ant-table-thead > tr > th {
+      background: linear-gradient(135deg, #fafbfc 0%, #f0f2f5 100%);
+      border-bottom: 2px solid #e8e8e8;
+      font-weight: 700;
+      color: #262626;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      padding: 16px;
+
+      &:first-child {
+        border-top-left-radius: 8px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 8px;
+      }
+    }
+
+    .ant-table-tbody > tr {
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #f0f9ff;
+        transform: scale(1.002);
+        box-shadow: 0 2px 8px rgba(24, 144, 255, 0.1);
+      }
+
+      > td {
+        padding: 16px;
+        border-bottom: 1px solid #f0f0f0;
+      }
+    }
+  }
+
+  // Status tags
+  .ant-tag {
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+
+    &.ant-tag-green {
+      background: linear-gradient(135deg, #52c41a 0%, #389e0d 100%);
+      color: white;
+      box-shadow: 0 2px 6px rgba(82, 196, 26, 0.3);
+    }
+
+    &.ant-tag-red {
+      background: linear-gradient(135deg, #ff4d4f 0%, #cf1322 100%);
+      color: white;
+      box-shadow: 0 2px 6px rgba(255, 77, 79, 0.3);
+    }
+
+    &.ant-tag-orange {
+      background: linear-gradient(135deg, #faad14 0%, #d48806 100%);
+      color: white;
+      box-shadow: 0 2px 6px rgba(250, 173, 20, 0.3);
+    }
+  }
+
+  // Action buttons
+  .ant-btn-text {
+    border-radius: 6px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+      background-color: rgba(24, 144, 255, 0.1);
+    }
+
+    &.ant-btn-dangerous:hover {
+      background-color: rgba(255, 77, 79, 0.1);
+    }
+  }
+
+  // ID styling
+  .assessment-id {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 11px;
+    background: linear-gradient(135deg, #f6f8fa 0%, #e1e8ed 100%);
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #586069;
+    display: inline-block;
+  }
+
+  // Modal styling
+  .ant-modal {
+    .ant-modal-content {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .ant-modal-header {
+      background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+      border-bottom: none;
+      padding: 20px 24px;
+
+      .ant-modal-title {
+        color: white;
+        font-weight: 700;
+        font-size: 18px;
+      }
+    }
+
+    .ant-modal-close {
+      color: white;
+      
+      &:hover {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+
+    .ant-modal-body {
+      padding: 24px;
+      background: #fafbfc;
+    }
+  }
+
+  // Form styling
+  .ant-form {
+    .ant-form-item-label > label {
+      font-weight: 600;
+      color: #262626;
+    }
+
+    .ant-input,
+    .ant-select-selector,
+    .ant-input-number {
+      border-radius: 6px;
+      border: 1px solid #d9d9d9;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: #40a9ff;
+        box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+      }
+
+      &:focus,
+      &.ant-input-focused,
+      &.ant-select-focused .ant-select-selector {
+        border-color: #1890ff;
+        box-shadow: 0 0 0 3px rgba(24, 144, 255, 0.2);
+      }
+    }
+
+    .ant-btn {
+      border-radius: 6px;
+      font-weight: 600;
+      height: 36px;
+      transition: all 0.3s ease;
+
+      &.ant-btn-default {
+        &:hover {
+          background-color: #f5f5f5;
+          border-color: #d9d9d9;
+        }
+      }
+    }
+  }
+
+  // Pagination styling
+  .ant-pagination {
+    margin-top: 24px;
+    text-align: center;
+
+    .ant-pagination-item {
+      border-radius: 6px;
+      border: 1px solid #d9d9d9;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: #1890ff;
+        transform: translateY(-1px);
+      }
+
+      &.ant-pagination-item-active {
+        border-color: #1890ff;
+        box-shadow: 0 2px 8px rgba(24, 144, 255, 0.3);
+      }
+    }
+
+    .ant-pagination-prev,
+    .ant-pagination-next {
+      border-radius: 6px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: #1890ff;
+        transform: translateY(-1px);
+      }
+    }
+  }
+
+  // Loading overlay
+  .ant-spin-container {
+    .ant-spin {
+      .ant-spin-dot {
+        i {
+          background-color: #1890ff;
+        }
+      }
+    }
+  }
+
+  // Empty state
+  .ant-empty {
+    .ant-empty-description {
+      color: #8c8c8c;
+      font-style: italic;
+    }
+  }
+
+  // Responsive design
+  @media (max-width: 768px) {
+    padding: 16px;
+
+    .ant-card {
+      .ant-card-body {
+        padding: 16px;
+      }
+    }
+
+    .ant-table {
+      font-size: 12px;
+
+      .ant-table-thead > tr > th,
+      .ant-table-tbody > tr > td {
+        padding: 12px 8px;
+      }
+    }
+
+    .ant-modal {
+      margin: 16px;
+      
+      .ant-modal-content {
+        .ant-modal-body {
+          padding: 16px;
+        }
+      }
+    }
+  }
+
+  // Animation keyframes
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .ant-card {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  // Scrollbar styling
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+    border-radius: 3px;
+    
+    &:hover {
+      background: linear-gradient(135deg, #40a9ff 0%, #1890ff 100%);
+    }
+  }
+
+  // Thêm style cho Transfer component
+  .ant-transfer {
+    .ant-transfer-list {
+      border-radius: 6px;
+      
+      .ant-transfer-list-header {
+        background-color: #fafafa;
+        border-radius: 6px 6px 0 0;
+      }
+      
+      .ant-transfer-list-body {
+        .ant-transfer-list-content {
+          .ant-transfer-list-content-item {
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin: 2px;
+            
+            &:hover {
+              background-color: #f5f5f5;
+            }
+            
+            &.ant-transfer-list-content-item-checked {
+              background-color: #e6f7ff;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Cập nhật Actions column
+  .ant-table {
+    .ant-table-thead > tr > th:last-child {
+      width: 280px; // Tăng width cho nhiều buttons
+    }
+    
+    .ant-table-tbody > tr > td:last-child {
+      .ant-space {
+        flex-wrap: wrap; // Cho phép buttons wrap xuống dòng
+        
+        .ant-btn {
+          margin-bottom: 4px; // Thêm spacing khi wrap
+        }
+      }
+    }
+  }
+
+  // Style cho Select options
+  .ant-select-dropdown {
+    .ant-select-item-option-content {
+      > div {
+        &:first-child {
+          font-weight: 500;
+          color: #262626;
+        }
+        
+        &:last-child {
+          margin-top: 4px;
+          font-size: 12px;
+          color: #8c8c8c;
+        }
+      }
+    }
+  }
+
+  // Tăng chiều cao và căn giữa nội dung cho Select trong modal
+  .ant-select-single .ant-select-selector {
+    min-height: 48px !important;
+    height: 48px !important;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    padding: 0 11px !important;
+  }
+}

@@ -1,0 +1,9 @@
+.search-section {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: flex-start;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+} 

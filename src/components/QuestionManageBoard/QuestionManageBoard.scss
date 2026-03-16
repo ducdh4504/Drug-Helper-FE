@@ -1,0 +1,426 @@
+.question-manage-board-container {
+  padding: 24px;
+  min-height: calc(100vh - 64px);
+  background-color: #f5f5f5;
+
+  .main-card {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    background: #ffffff;
+
+    .ant-card-body {
+      padding: 24px;
+    }
+  }
+
+  // Header Section
+  .header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0f0;
+
+    .title-section {
+      display: flex;
+      align-items: center;
+
+      .title-icon {
+        font-size: 24px;
+        color: #1890ff;
+        margin-right: 12px;
+      }
+
+      .main-title {
+        margin: 0;
+        color: #262626;
+        font-weight: 600;
+        font-size: 24px;
+      }
+    }
+
+    .add-btn {
+      background: #1890ff;
+      border-color: #1890ff;
+      border-radius: 6px;
+      height: 32px;
+      font-weight: 400;
+
+      &:hover {
+        background: #40a9ff;
+        border-color: #40a9ff;
+      }
+    }
+  }
+
+  // Table Styling
+  .questions-table {
+    border-radius: 6px;
+    overflow: hidden;
+
+    .ant-table-thead > tr > th {
+      background-color: #fafafa;
+      border-bottom: 1px solid #f0f0f0;
+      font-weight: 600;
+      color: #262626;
+      font-size: 14px;
+      padding: 16px;
+    }
+
+    .ant-table-tbody > tr {
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #f5f5f5;
+      }
+
+      > td {
+        padding: 16px;
+        border-bottom: 1px solid #f0f0f0;
+        color: #262626;
+      }
+    }
+
+    // Question Content Styling
+    .question-content {
+      display: flex;
+      align-items: flex-start;
+      font-weight: 400;
+      color: #262626;
+      line-height: 1.5;
+    }
+
+    // Score Tag Styling
+    .score-tag {
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-weight: 400;
+      font-size: 12px;
+      border: 1px solid transparent;
+
+      &.ant-tag-green {
+        background: #f6ffed;
+        border-color: #b7eb8f;
+        color: #52c41a;
+      }
+
+      &.ant-tag-orange {
+        background: #fff7e6;
+        border-color: #ffd591;
+        color: #fa8c16;
+      }
+
+      &.ant-tag-red {
+        background: #fff2f0;
+        border-color: #ffccc7;
+        color: #ff4d4f;
+      }
+    }
+
+    // Assessment Info
+    .assessment-info {
+      .assessment-name {
+        font-weight: 500;
+        color: #1890ff;
+      }
+    }
+
+    // Answers Count Tag
+    .answers-count-tag {
+      background: #e6f7ff;
+      border-color: #91d5ff;
+      color: #1890ff;
+      border-radius: 4px;
+      font-weight: 400;
+      font-size: 12px;
+      padding: 2px 8px;
+    }
+
+    // Question ID
+    .question-id {
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+      font-size: 12px;
+      background: #f5f5f5;
+      padding: 2px 6px;
+      border-radius: 3px;
+      color: #666;
+      display: inline-block;
+    }
+
+    // Action Buttons
+    .action-btn {
+      border-radius: 4px;
+      transition: all 0.3s ease;
+
+      &.edit-btn:hover {
+        background-color: #f5f5f5;
+      }
+
+      &.delete-btn:hover {
+        background-color: #fff2f0;
+        color: #ff4d4f;
+      }
+    }
+  }
+
+  // Pagination
+  .table-pagination {
+    margin-top: 16px;
+
+    .ant-pagination-item {
+      border-radius: 6px;
+
+      &.ant-pagination-item-active {
+        border-color: #1890ff;
+      }
+    }
+  }
+
+  // Modal Styling
+  .question-modal {
+    .ant-modal-content {
+      border-radius: 6px;
+    }
+
+    .ant-modal-header {
+      background: #ffffff;
+      border-bottom: 1px solid #f0f0f0;
+      padding: 16px 24px;
+
+      .modal-title {
+        color: #262626;
+        font-weight: 600;
+        font-size: 16px;
+      }
+    }
+
+    .ant-modal-close {
+      color: #00000073;
+
+      &:hover {
+        color: #000000d9;
+      }
+    }
+
+    .ant-modal-body {
+      padding: 24px;
+      background: #ffffff;
+    }
+  }
+
+  // Form Styling
+  .question-form {
+    .ant-form-item-label > label {
+      font-weight: 600;
+      color: #262626;
+    }
+
+    .ant-input,
+    .ant-select-selector,
+    .ant-input-number {
+      border-radius: 6px;
+      border: 1px solid #d9d9d9;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: #40a9ff;
+      }
+
+      &:focus,
+      &.ant-input-focused,
+      &.ant-select-focused .ant-select-selector {
+        border-color: #1890ff;
+        box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+      }
+    }
+
+    // Form Row Layout
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 24px;
+      
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    // Answers Divider
+    .answers-divider {
+      margin: 24px 0 16px 0;
+      border-color: #f0f0f0;
+
+      .divider-text {
+        color: #262626;
+        font-weight: 600;
+        font-size: 14px;
+        padding: 0 16px;
+      }
+    }
+
+    // Answers Section
+    .answers-section {
+      .answer-item {
+        background: #fafafa;
+        border: 1px solid #f0f0f0;
+        border-radius: 6px;
+        padding: 16px;
+        margin-bottom: 12px;
+
+        .answer-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 12px;
+
+          .answer-label {
+            font-weight: 600;
+            color: #262626;
+            font-size: 14px;
+          }
+
+          .remove-answer-btn {
+            color: #ff4d4f;
+            font-size: 16px;
+            cursor: pointer;
+
+            &:hover {
+              color: #cf1322;
+            }
+          }
+        }
+
+        .answer-inputs {
+          display: grid;
+          grid-template-columns: 3fr 1fr;
+          gap: 12px;
+          align-items: start;
+
+          @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+          }
+
+          .ant-form-item {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .add-answer-item {
+        margin-bottom: 0;
+
+        .add-answer-btn {
+          border: 1px dashed #d9d9d9;
+          border-radius: 6px;
+          height: 32px;
+          color: #1890ff;
+          font-weight: 400;
+
+          &:hover {
+            border-color: #40a9ff;
+            color: #40a9ff;
+          }
+        }
+      }
+    }
+
+    // Form Actions
+    .form-actions {
+      margin: 24px 0 0 0;
+      text-align: right;
+
+      .submit-btn {
+        background: #1890ff;
+        border-color: #1890ff;
+        border-radius: 6px;
+        height: 32px;
+        font-weight: 400;
+
+        &:hover {
+          background: #40a9ff;
+          border-color: #40a9ff;
+        }
+      }
+
+      .ant-btn-default {
+        height: 32px;
+        border-radius: 6px;
+        font-weight: 400;
+
+        &:hover {
+          color: #40a9ff;
+          border-color: #40a9ff;
+        }
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 768px) {
+    padding: 16px;
+
+    .main-card {
+      .ant-card-body {
+        padding: 16px;
+      }
+    }
+
+    .header-section {
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+
+      .title-section {
+        .main-title {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .question-modal {
+      margin: 16px;
+
+      .ant-modal-body {
+        padding: 16px;
+      }
+    }
+  }
+
+  // Animation Keyframes
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .main-card {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  // Scrollbar Styling
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+
+    &:hover {
+      background: #a8a8a8;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+// src/components/FormField/FormField.scss
+.form-field {
+  margin-bottom: 8px;
+}
+
+.input-wrapper {
+  position: relative;
+
+  &.has-error {
+    .input-field {
+      border-color: #f87171 !important;
+      box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.3) !important;
+    }
+  }
+}
+
+.field-error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 8px 12px;
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  color: #f87171;
+  font-size: 13px;
+  animation: slideIn 0.2s ease;
+
+  .error-icon {
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .error-text {
+    line-height: 1.4;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

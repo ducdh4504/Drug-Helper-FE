@@ -1,0 +1,58 @@
+.avatar-upload-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 16px;
+
+  .ant-avatar {
+    width: 200px !important;
+    height: 200px !important;
+    font-size: 48px;
+    transition: box-shadow 0.2s, filter 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    cursor: pointer;
+    background: #f5f5f5;
+  }
+
+  .upload-icon-overlay {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: #ffffff;
+    font-size: 40px;
+    border-radius: 50%;
+    padding: 24px 24px 32px 24px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    min-width: 120px;
+    background: none !important;
+  }
+
+  .upload-label {
+    margin-top: 8px;
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    user-select: none;
+    pointer-events: none;
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+
+  &:hover .upload-icon-overlay {
+    display: flex;
+  }
+
+  &:hover .ant-avatar {
+    filter: brightness(0.7);
+  }
+} 

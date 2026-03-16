@@ -1,0 +1,232 @@
+.activity-history {
+  padding: 0;
+}
+
+.activity-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #666;
+
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #235086;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+}
+
+.activity-section {
+  margin-bottom: 48px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 24px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e5e5e5;
+}
+
+// Table Styles
+.table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 16px;
+}
+
+
+.activity-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  min-width: 800px;
+
+  th, td {
+    padding: 14px 10px;
+    text-align: center;
+    font-size: 1.05rem;
+    font-weight: 500;
+    border-bottom: 1px solid #e5e5e5;
+    vertical-align: middle;
+  }
+
+  th {
+    background: #235086;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 1.08rem;
+  }
+
+  td {
+    color: #222;
+    background: #fafbfc;
+    &.booking-date, &.booking-time {
+      white-space: nowrap;
+    }
+    &.booking-time {
+      font-family: monospace;
+    }
+    &.booking-note {
+      max-width: 220px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    &.consultant-name {
+      font-weight: 600;
+    }
+  }
+
+  tbody tr {
+    transition: background-color 0.2s ease;
+    &:hover {
+      background: #f8f9fa;
+      td {
+        background: #f8f9fa;
+      }
+    }
+  }
+
+  tbody tr:nth-child(even) td {
+    background: #fff;
+  }
+  tbody tr:nth-child(even):hover td {
+    background: #f8f9fa;
+  }
+}
+
+// Status Badge Styles
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+  min-width: 80px;
+
+  &.approved {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+
+  &.pending {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+  }
+
+  &.rejected {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+}
+
+// Workshop Grid Styles
+.workshop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.workshop-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  }
+}
+
+.workshop-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.workshop-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.workshop-card:hover .workshop-img {
+  transform: scale(1.05);
+}
+
+.workshop-content {
+  padding: 20px;
+}
+
+.workshop-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 12px 0;
+}
+
+.workshop-desc {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+}
+
+.workshop-date {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0 0 12px 0;
+}
+
+.workshop-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #d4edda;
+  color: #155724;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #c3e6cb;
+}
+
+// Empty State
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 2px dashed #ddd;
+
+  p {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+}
