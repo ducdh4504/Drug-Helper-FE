@@ -1,0 +1,25 @@
+.admin-layout {
+  min-height: 100vh;
+}
+
+.admin-content {
+  padding-top: 60px; // Height của AdminNavbar
+  display: flex;
+}
+
+.admin-main {
+  flex: 1;
+  padding: 20px;
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+
+  .sidebar-open & {
+    margin-left: 250px; // Width của SideTab
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-main {
+    margin-left: 0 !important;
+  }
+}
